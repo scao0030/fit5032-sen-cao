@@ -111,6 +111,9 @@
     <section class="lab-section">
       <h2>Attribute, Class and Style Binding with <code>v-bind</code></h2>
       <p>Highlighting Specific Authors:</p>
+      <div :style="{ color: textColor, fontSize: textSize + 'px' }">
+        {{ authors.filter((author) => author.name === 'George Orwell')[0]?.name }}
+      </div>
     </section>
   </div>
 </template>
@@ -137,6 +140,9 @@ const orwell = computed(() => authors.filter((author) => author.name === 'George
 
 // Activity 5: Find author by ID
 const austen = computed(() => authors.filter((author) => author.id === 1))
+
+const textColor = ref('blue')
+const textSize = ref(20)
 </script>
 
 <style scoped>
