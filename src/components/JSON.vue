@@ -83,7 +83,10 @@
       <!-- TODO: CODE TO RENDER LIST OF OPENING HOURS HERE -->
       <ul>
         <li v-for="(timetable, day) in bookstores.openingHours" :key="timetable">
-          {{ day }} : <li v-for="(time, status) in timetable" :key="status">{{ status }} : {{ time }}</li>
+          {{ day }} :
+          <ul>
+            <li v-for="(time, status) in timetable" :key="status">{{ status }} : {{ time }}</li>
+          </ul>
         </li>
       </ul>
 
