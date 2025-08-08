@@ -121,6 +121,9 @@
 <script setup>
 import { ref, computed } from 'vue'
 
+const textColor = ref('blue')
+const textSize = ref(20)
+
 // Activity 1: Import JSON files (authors.json and bookstores.json)
 // TODO: CODE TO IMPORT JSON FILES HERE
 import authors from '../assets/json/authors.json'
@@ -140,9 +143,6 @@ const orwell = computed(() => authors.filter((author) => author.name === 'George
 
 // Activity 5: Find author by ID
 const austen = computed(() => authors.filter((author) => author.id === 1))
-
-const textColor = ref('blue')
-const textSize = ref(20)
 </script>
 
 <style scoped>
