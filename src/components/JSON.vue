@@ -93,8 +93,9 @@
       <h3>Working with Arrays in Objects</h3>
       <!-- Activity 12: Get the top sellers from the bookstores object. -->
       <!-- TODO: CODE TO GET TOP SELLERS HERE -->
-      <p>We operate in:</p>
-      <p>Our #1 seller:</p>
+      <p>We operate in: {{ Object.keys(bookstores)[4] }}</p>
+
+      <p>Our #1 seller: {{ bookstores.topSellers[0] }}</p>
     </section>
 
     <section class="lab-section">
@@ -103,8 +104,8 @@
       <!-- Activity 13: Toggle the message visibility when the button is clicked. -->
       <!-- TODO: CODE TO TOGGLE MESSAGE VISIBILITY HERE. Hint: Use the v-if directive. -->
       <button @click="showMessage = !showMessage">Toggle Message</button>
-      <p class="message success">✨ You're a Vue superstar! ✨</p>
-      <p>Click the button to see a message.</p>
+      <p v-if="showMessage" class="message success">✨ You're a Vue superstar! ✨</p>
+      <p v-else class="message">Click the button to see a message.</p>
     </section>
 
     <section class="lab-section">
