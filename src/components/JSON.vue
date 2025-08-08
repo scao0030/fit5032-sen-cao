@@ -37,12 +37,17 @@
       </ul>
 
       <h3>Finding in Arrays</h3>
-      <p>Finding by property: {{ orwell?.name }}</p>
+      <p>Finding by property: {{ orwell[0]?.name }}</p>
 
       <h3>Nested Arrays/Objects</h3>
-      <p>{{ austen?.name }}'s works:</p>
+      <p>{{ austen[0]?.name }}'s works:</p>
       <!-- Activity 9: Render a list of Austen's works. Hint: Use the v-for directive to iterate through the array of authors that you have filtered out. -->
       <!-- TODO: CODE TO RENDER LIST OF AUSTEN'S WORKS HERE -->
+      <ul>
+        <li v-for="work in austen[0]?.famousWorks" :key="work.title">
+          {{ work.title }} ({{ work.year }})
+        </li>
+      </ul>
     </section>
 
     <section class="lab-section">
@@ -54,23 +59,33 @@
         Company:
         <!-- Activity 9a: Get the company name from the bookstores object. -->
         <!-- TODO: CODE TO GET COMPANY NAME HERE -->
+        {{ bookstores?.name }}
       </p>
 
       <p>
         Total Stores:
         <!-- Activity 9b: Get the total number of stores from the bookstores object. -->
         <!-- TODO: CODE TO GET TOTAL STORES HERE -->
+        {{ bookstores?.totalStores }}
       </p>
 
       <h3>Iterating Object Properties</h3>
       <p>Store Types:</p>
       <!-- Activity 10: Iterate through the storeTypes array and display the store type and the number of stores that use that type. -->
       <!-- TODO: CODE TO RENDER LIST OF STORE TYPES HERE -->
+      <ul>
+        <li v-for="(count, type) in bookstores.storeTypes" :key="type">{{ type }} : {{ count }}</li>
+      </ul>
 
       <h3>Nested Objects</h3>
       <p>Opening Hours:</p>
       <!-- Activity 11: Iterate through the openingHours object and display the day of the week and the opening and closing times. -->
       <!-- TODO: CODE TO RENDER LIST OF OPENING HOURS HERE -->
+      <ul>
+        <li v-for="(timetable, day) in bookstores.openingHours" :key="timetable">
+          {{ day }} : <li v-for="(time, status) in timetable" :key="status">{{ status }} : {{ time }}</li>
+        </li>
+      </ul>
 
       <h3>Working with Arrays in Objects</h3>
       <!-- Activity 12: Get the top sellers from the bookstores object. -->
